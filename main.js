@@ -21,8 +21,9 @@ addBtn.addEventListener("click", () => {
   dialog.showModal();
 });
 
+const book = new Book(bookTitle.value, authorName.value, pageCount.value);
+
 function addBookToLibrary() {
-  const book = new Book(bookTitle.value, authorName.value, pageCount.value);
   myLibrary.push(book);
 }
 
@@ -44,6 +45,7 @@ bookDataForm.addEventListener("submit", (event) => {
   const authorCell = document.createElement("td");
   const pageCell = document.createElement("td");
   const statusCell = document.createElement("td");
+  const delCell = document.createElement("td");
 
   let serialNum = tbody.rows.length + 1;
   snCell.textContent = `${serialNum} .`;
@@ -56,6 +58,14 @@ bookDataForm.addEventListener("submit", (event) => {
     }
   });
 
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+
+  checkbox.setAttribute("name", "delete_book_data");
+  checkbox.setAttribute("unique-id", book.id);
+
+  delCell.appendChild(checkbox);
+
   addBookToLibrary();
 
   newRow.appendChild(snCell);
@@ -63,6 +73,7 @@ bookDataForm.addEventListener("submit", (event) => {
   newRow.appendChild(authorCell);
   newRow.appendChild(pageCell);
   newRow.appendChild(statusCell);
+  newRow.appendChild(delCell);
 
   tbody.append(newRow);
 
