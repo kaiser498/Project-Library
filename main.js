@@ -6,6 +6,7 @@ const bookTitle = document.querySelector("#book_title");
 const authorName = document.querySelector("#author_name");
 const pageCount = document.querySelector("#page_count");
 const statusBtns = document.querySelectorAll('input[name="read_status"]');
+const cancelBtn = document.querySelector("#close");
 
 const myLibrary = [];
 
@@ -28,7 +29,13 @@ function addBookToLibrary() {
 bookDataForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  addBookToLibrary();
+  if (
+    bookTitle.value === "" &&
+    authorName.value === "" &&
+    pageCount.value === ""
+  ) {
+    return;
+  }
 
   const newRow = document.createElement("tr");
 
@@ -48,6 +55,8 @@ bookDataForm.addEventListener("submit", (event) => {
     }
   });
 
+  addBookToLibrary();
+
   newRow.appendChild(snCell);
   newRow.appendChild(titleCell);
   newRow.appendChild(authorCell);
@@ -59,4 +68,8 @@ bookDataForm.addEventListener("submit", (event) => {
   bookTitle.value = "";
   authorName.value = "";
   pageCount.value = "";
+});
+
+cancelBtn.addEventListener("click", () => {
+  dialog.close();
 });
