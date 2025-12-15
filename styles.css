@@ -130,3 +130,10 @@ td:nth-child(2) {
   font-weight: 300;
 }
 
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: rgb(0, 0, 0, 0.2);
+}
