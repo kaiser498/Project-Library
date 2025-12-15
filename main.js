@@ -1,5 +1,5 @@
 const addBtn = document.querySelector("#addBtn");
-const dialog = document.querySelector("dialog");
+const dialog = document.querySelector("#dialog-for-entry");
 const bookDataForm = document.querySelector("#bookData");
 const tbody = document.querySelector("tbody");
 const bookTitle = document.querySelector("#book_title");
