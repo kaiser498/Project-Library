@@ -9,6 +9,11 @@ const statusBtns = document.querySelectorAll('input[name="read_status"]');
 const cancelBtn = document.querySelector("#close");
 const deleteBtn = document.querySelector("#delete-button");
 const dialogDeletion = document.querySelector("#dialog-for-deletion");
+const deleteCheckbox = document.querySelectorAll(
+  '[name="delete_book_data"]:checked'
+);
+const deletionYes = document.querySelector("#deletion-yes");
+const deletionNo = document.querySelector("#deletion-no");
 
 const myLibrary = [];
 
@@ -23,12 +28,6 @@ addBtn.addEventListener("click", () => {
   dialog.showModal();
 });
 
-const book = new Book(bookTitle.value, authorName.value, pageCount.value);
-
-function addBookToLibrary() {
-  myLibrary.push(book);
-}
-
 bookDataForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -39,6 +38,10 @@ bookDataForm.addEventListener("submit", (event) => {
   ) {
     return;
   }
+
+  const book = new Book(bookTitle.value, authorName.value, pageCount.value);
+
+  myLibrary.push(book);
 
   const newRow = document.createElement("tr");
 
@@ -67,8 +70,6 @@ bookDataForm.addEventListener("submit", (event) => {
   checkbox.setAttribute("unique-id", book.id);
 
   delCell.appendChild(checkbox);
-
-  addBookToLibrary();
 
   newRow.appendChild(snCell);
   newRow.appendChild(titleCell);
