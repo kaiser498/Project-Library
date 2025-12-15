@@ -8,3 +8,10 @@ const pageCount = document.querySelector("#page_count");
 const statusBtns = document.querySelectorAll('input[name="read_status"]');
 
 const myLibrary = [];
+
+function Book(title, author, page) {
+  this.id = crypto.randomUUID();
+  this.title = title;
+  this.author = author;
+  this.page = page;
+}
