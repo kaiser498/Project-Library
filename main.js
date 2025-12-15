@@ -30,8 +30,8 @@ bookDataForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (
-    bookTitle.value === "" &&
-    authorName.value === "" &&
+    bookTitle.value === "" ||
+    authorName.value === "" ||
     pageCount.value === ""
   ) {
     return;
@@ -45,7 +45,8 @@ bookDataForm.addEventListener("submit", (event) => {
   const pageCell = document.createElement("td");
   const statusCell = document.createElement("td");
 
-  snCell.textContent = tbody.rows.length + 1;
+  let serialNum = tbody.rows.length + 1;
+  snCell.textContent = `${serialNum} .`;
   titleCell.textContent = bookTitle.value;
   authorCell.textContent = authorName.value;
   pageCell.textContent = pageCount.value;
