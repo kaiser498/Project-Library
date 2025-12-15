@@ -130,7 +130,16 @@ td:nth-child(2) {
   font-weight: 300;
 }
 
-footer{
+#delete-button {
+  position: relative;
+  left: 70vw;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+  border-radius: 50px;
+  background-color: #F87C63;
+}
+
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
