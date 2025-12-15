@@ -42,7 +42,16 @@ body {
   font-family: "Roboto", sans-serif, serif;
 }
 
-header{
+header {
   position: sticky;
   top: 0;
+  background-color: rgb(0, 0, 0);
+}
+
+h1 {
+  font-family: "Neuton", sans-serif, serif;
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  font-size: 2.5rem;
+  padding: 0.5rem 1.5rem;
 }
