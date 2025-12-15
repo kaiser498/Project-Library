@@ -24,3 +24,39 @@ function addBookToLibrary() {
   const book = new Book(bookTitle.value, authorName.value, pageCount.value);
   myLibrary.push(book);
 }
+
+bookDataForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  addBookToLibrary();
+
+  const newRow = document.createElement("tr");
+
+  const snCell = document.createElement("td");
+  const titleCell = document.createElement("td");
+  const authorCell = document.createElement("td");
+  const pageCell = document.createElement("td");
+  const statusCell = document.createElement("td");
+
+  snCell.textContent = tbody.rows.length + 1;
+  titleCell.textContent = bookTitle.value;
+  authorCell.textContent = authorName.value;
+  pageCell.textContent = pageCount.value;
+  statusBtns.forEach((btn) => {
+    if (btn.checked) {
+      statusCell.textContent = btn.value;
+    }
+  });
+
+  newRow.appendChild(snCell);
+  newRow.appendChild(titleCell);
+  newRow.appendChild(authorCell);
+  newRow.appendChild(pageCell);
+  newRow.appendChild(statusCell);
+
+  tbody.append(newRow);
+
+  bookTitle.value = "";
+  authorName.value = "";
+  pageCount.value = "";
+});
