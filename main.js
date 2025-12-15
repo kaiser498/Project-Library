@@ -7,6 +7,8 @@ const authorName = document.querySelector("#author_name");
 const pageCount = document.querySelector("#page_count");
 const statusBtns = document.querySelectorAll('input[name="read_status"]');
 const cancelBtn = document.querySelector("#close");
+const deleteBtn = document.querySelector("#delete-button");
+const dialogDeletion = document.querySelector("#dialog-for-deletion");
 
 const myLibrary = [];
 
@@ -84,4 +86,8 @@ bookDataForm.addEventListener("submit", (event) => {
 
 cancelBtn.addEventListener("click", () => {
   dialog.close();
+});
+
+deleteBtn.addEventListener("click", () => {
+  dialogDeletion.showModal();
 });
