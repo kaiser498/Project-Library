@@ -15,3 +15,12 @@ function Book(title, author, page) {
   this.author = author;
   this.page = page;
 }
+
+addBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+function addBookToLibrary() {
+  const book = new Book(bookTitle.value, authorName.value, pageCount.value);
+  myLibrary.push(book);
+}
