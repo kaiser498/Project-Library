@@ -49,10 +49,10 @@ function updateTable() {
     snCell.textContent = tbody.rows.length + 1;
     newTitleCell.textContent = book.title;
     newAuthorCell.textContent = book.author;
-    newPageCell.textContent = book.pages;
+    newPageCell.textContent = book.page;
     statusCell.textContent = book.status;
 
-    newRow.append(newTitleCell, newAuthorCell, newPageCell);
+    newRow.append(snCell, newTitleCell, newAuthorCell, newPageCell, statusCell);
 
     fragment.append(newRow);
   }
