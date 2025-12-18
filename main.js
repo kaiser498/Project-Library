@@ -15,7 +15,19 @@ const deleteCheckbox = document.querySelectorAll(
 const deletionYes = document.querySelector("#deletion-yes");
 const deletionNo = document.querySelector("#deletion-no");
 
-const myLibrary = [];
+const myLibrary = [
+  {
+    id: "883a2365-7e3b-4287-a767-b87a1af891ca",
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    page: "200",
+  },{
+    id: "883a2365-7e3b-1242-a767-b87a1af891ca",
+    title: "Harry Potter and the Sorcerer's Stone",
+    author: "J. K. Rowling",
+    page: "327",
+  }
+];
 
 function Book(title, author, page) {
   this.id = crypto.randomUUID();
@@ -67,5 +79,3 @@ deletionYes.addEventListener("click", () => {
 deletionNo.addEventListener("click", () => {
   dialogDeletion.close();
 });
-
-function runfunctioThatDeletes() {}
