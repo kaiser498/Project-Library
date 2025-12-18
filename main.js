@@ -122,3 +122,8 @@ submitBtn.addEventListener("click", () => {
   addNewBookToLibrary();
   updateTable();
 });
+
+const cancleBtn = document.querySelector("#close");
+cancleBtn.addEventListener("click", () => {
+  dialogForEntry.close();
+});
