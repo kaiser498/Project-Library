@@ -45,6 +45,14 @@ function updateTable() {
     const newAuthorCell = document.createElement("td");
     const newPageCell = document.createElement("td");
     const statusCell = document.createElement("td");
+    const deleteOptionCell = document.createElement("td");
+    const deleteRowBtn = document.createElement("input");
+    deleteRowBtn.type = "checkbox";
+    deleteRowBtn.id = "delete_row";
+    deleteRowBtn.name = "delete_row";
+    deleteRowBtn.value = "delete";
+
+    deleteOptionCell.append(deleteRowBtn);
 
     snCell.textContent = tbody.rows.length + 1;
     newTitleCell.textContent = book.title;
@@ -52,7 +60,14 @@ function updateTable() {
     newPageCell.textContent = book.page;
     statusCell.textContent = book.status;
 
-    newRow.append(snCell, newTitleCell, newAuthorCell, newPageCell, statusCell);
+    newRow.append(
+      snCell,
+      newTitleCell,
+      newAuthorCell,
+      newPageCell,
+      statusCell,
+      deleteOptionCell
+    );
 
     fragment.append(newRow);
   }
