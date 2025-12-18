@@ -43,43 +43,6 @@ bookDataForm.addEventListener("submit", (event) => {
 
   myLibrary.push(book);
 
-  const newRow = document.createElement("tr");
-
-  const snCell = document.createElement("td");
-  const titleCell = document.createElement("td");
-  const authorCell = document.createElement("td");
-  const pageCell = document.createElement("td");
-  const statusCell = document.createElement("td");
-  const delCell = document.createElement("td");
-
-  let serialNum = tbody.rows.length + 1;
-  snCell.textContent = `${serialNum}.`;
-  titleCell.textContent = bookTitle.value;
-  authorCell.textContent = authorName.value;
-  pageCell.textContent = pageCount.value;
-  statusBtns.forEach((btn) => {
-    if (btn.checked) {
-      statusCell.textContent = btn.value;
-    }
-  });
-
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-
-  checkbox.setAttribute("name", "delete_book_data");
-  checkbox.setAttribute("unique-id", book.id);
-
-  delCell.appendChild(checkbox);
-
-  newRow.appendChild(snCell);
-  newRow.appendChild(titleCell);
-  newRow.appendChild(authorCell);
-  newRow.appendChild(pageCell);
-  newRow.appendChild(statusCell);
-  newRow.appendChild(delCell);
-
-  tbody.append(newRow);
-
   bookTitle.value = "";
   authorName.value = "";
   pageCount.value = "";
