@@ -53,7 +53,7 @@ bookDataForm.addEventListener("submit", (event) => {
   const delCell = document.createElement("td");
 
   let serialNum = tbody.rows.length + 1;
-  snCell.textContent = `${serialNum} .`;
+  snCell.textContent = `${serialNum}.`;
   titleCell.textContent = bookTitle.value;
   authorCell.textContent = authorName.value;
   pageCell.textContent = pageCount.value;
@@ -90,5 +90,19 @@ cancelBtn.addEventListener("click", () => {
 });
 
 deleteBtn.addEventListener("click", () => {
+  if (deleteCheckbox.length === 0) {
+    return;
+  }
   dialogDeletion.showModal();
 });
+
+deletionYes.addEventListener("click", () => {
+  runfunctioThatDeletes();
+  dialogDeletion.close();
+});
+
+deletionNo.addEventListener("click", () => {
+  dialogDeletion.close();
+});
+
+function runfunctioThatDeletes() {}
