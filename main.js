@@ -1,4 +1,23 @@
-const myLibrary = [];
+const myLibrary = [
+  {
+    id: "55d2235f-2678-462e-8091-10c1af3e80a5",
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    page: "200",
+    status: "Not Read",
+  },
+  {
+    id: "55d2235f-2678-462e-8091-10c1af3e80a5",
+    title: "Harry Potter and the Sorcerer's Stone",
+    author: "J. K. Rowling",
+    page: "327",
+    status: "Not Read",
+  },
+];
+
+const tbody = document.querySelector("tbody");
+
+updateTable();
 
 function Book(title, author, page, status) {
   this.id = crypto.randomUUID();
@@ -29,8 +48,6 @@ function addNewBookToLibrary() {
   );
   myLibrary.push(book);
 }
-
-const tbody = document.querySelector("tbody");
 
 function updateTable() {
   tbody.innerHTML = "";
