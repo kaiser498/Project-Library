@@ -37,7 +37,14 @@ addBtn.addEventListener("click", () => {
 const bookTitle = document.querySelector("#book_title");
 const authorName = document.querySelector("#author_name");
 const pageCount = document.querySelector("#page_count");
-const statusBtn = document.querySelector('input[name="read_status"]:checked');
+const radioBtns = document.querySelectorAll('input[name="read_status"]');
+
+let radioValue = "";
+radioBtns.forEach((radio) => {
+  radio.addEventListener("change", () => {
+    radioValue = document.querySelector('input[name="read_status"]:checked')?.value;
+  });
+});
 
 function addNewBookToLibrary() {
   if (
@@ -51,7 +58,7 @@ function addNewBookToLibrary() {
     bookTitle.value,
     authorName.value,
     pageCount.value,
-    statusBtn.value
+    radioValue
   );
   myLibrary.push(book);
 
