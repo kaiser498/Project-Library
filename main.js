@@ -35,5 +35,5 @@ const tbody = document.querySelector("tbody");
 function updateTable(){
   tbody.innerHTML = "";
 
-  
+  const fragment = document.createDocumentFragment();
 }
