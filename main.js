@@ -58,7 +58,7 @@ function updateTable() {
     labelForDel.appendChild(document.createTextNode("Delete"));
     deleteOptionCell.append(labelForDel, deleteRowBtn);
 
-    snCell.textContent = tbody.rows.length + 1;
+    snCell.textContent = `${tbody.rows.length + 1}.`;
     newTitleCell.textContent = book.title;
     newAuthorCell.textContent = book.author;
     newPageCell.textContent = book.page;
