@@ -37,16 +37,27 @@ addBtn.addEventListener("click", () => {
 const bookTitle = document.querySelector("#book_title");
 const authorName = document.querySelector("#author_name");
 const pageCount = document.querySelector("#page_count");
-const statusBtns = document.querySelector('input[name="read_status"]:checked');
+const statusBtn = document.querySelector('input[name="read_status"]:checked');
 
 function addNewBookToLibrary() {
+  if (
+    bookTitle.value === "" ||
+    authorName.value === "" ||
+    pageCount.value === ""
+  ) {
+    return;
+  }
   let book = new Book(
     bookTitle.value,
     authorName.value,
     pageCount.value,
-    statusBtns.value
+    statusBtn.value
   );
   myLibrary.push(book);
+
+  bookTitle.value = "";
+  authorName.value = "";
+  pageCount.value = "";
 }
 
 function updateTable() {
