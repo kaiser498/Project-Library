@@ -47,12 +47,16 @@ function updateTable() {
     const statusCell = document.createElement("td");
     const deleteOptionCell = document.createElement("td");
     const deleteRowBtn = document.createElement("input");
+    const labelForDel = document.createElement("label");
+
     deleteRowBtn.type = "checkbox";
     deleteRowBtn.id = "delete_row";
     deleteRowBtn.name = "delete_row";
     deleteRowBtn.value = "delete";
 
-    deleteOptionCell.append(deleteRowBtn);
+    labelForDel.htmlFor = "delete_row";
+    labelForDel.appendChild(document.createTextNode("Delete"));
+    deleteOptionCell.append(labelForDel, deleteRowBtn);
 
     snCell.textContent = tbody.rows.length + 1;
     newTitleCell.textContent = book.title;
