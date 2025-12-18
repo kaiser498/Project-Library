@@ -67,15 +67,19 @@ function updateTable() {
     const labelForDel = document.createElement("label");
 
     deleteRowBtn.type = "checkbox";
-    deleteRowBtn.className += "delete_row";
-    deleteRowBtn.name = "delete_row";
+    deleteRowBtn.id = `delete_row${fragment.querySelectorAll("tr").length + 1}`;
+    deleteRowBtn.name = `delete_row${
+      fragment.querySelectorAll("tr").length + 1
+    }`;
     deleteRowBtn.value = "delete";
 
-    labelForDel.htmlFor = "delete_row";
+    labelForDel.htmlFor = `delete_row${
+      fragment.querySelectorAll("tr").length + 1
+    }`;
     labelForDel.appendChild(document.createTextNode("Delete"));
     deleteOptionCell.append(labelForDel, deleteRowBtn);
 
-    snCell.textContent = `${tbody.rows.length + 1}.`;
+    snCell.textContent = `${fragment.querySelectorAll("tr").length + 1}.`;
     newTitleCell.textContent = book.title;
     newAuthorCell.textContent = book.author;
     newPageCell.textContent = book.page;
