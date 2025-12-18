@@ -31,3 +31,9 @@ function addNewBookToLibrary() {
 }
 
 const tbody = document.querySelector("tbody");
+
+function updateTable(){
+  tbody.innerHTML = "";
+
+  
+}
