@@ -58,3 +58,9 @@ function updateTable() {
   }
   tbody.append(fragment);
 }
+
+const submitBtn = document.querySelector("#submitForAddition");
+submitBtn.addEventListener("click", () => {
+  addNewBookToLibrary();
+  updateTable();
+});
