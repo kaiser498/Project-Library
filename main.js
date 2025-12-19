@@ -135,3 +135,10 @@ const dialogForDeletion = document.querySelector("#dialog-for-deletion");
 deleteBtn.addEventListener("click", () => {
   dialogForDeletion.showModal();
 });
+
+const deleteYes = document.querySelector("#deletion-yes");
+const deleteNo = document.querySelector("#deletion-no");
+
+deleteNo.addEventListener("click", () => {
+  dialogForDeletion.close();
+});
