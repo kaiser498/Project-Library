@@ -1,4 +1,4 @@
-const myLibrary = [
+let myLibrary = [
   {
     id: "55d2235f-2678-462e-8091-10c1af3e80a5",
     title: "The Great Gatsby",
