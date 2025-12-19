@@ -186,3 +186,14 @@ tr > :nth-child(6) {
   inset: 0;
   margin: auto;
 }
+
+#dialog-for-entry {
+  background-color: #4d8a3dee;
+  color: white;
+}
+
+#dialog-for-deletion {
+  background-color: #a11f1fee;
+  color: white;
+}
+
