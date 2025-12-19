@@ -110,6 +110,8 @@ table {
   min-width: 70vw;
   margin: 0 auto;
   border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
 }
 
 thead {
@@ -122,6 +124,7 @@ th {
   border: 2px solid #999;
   padding: 0.5rem;
   text-align: left;
+  overflow-wrap: break-word;
 }
 
 th {
@@ -163,12 +166,12 @@ th:nth-child(3) {
 }
 
 tr > :nth-child(4) {
-  width: 5%;
+  width: 8%;
   text-align: center;
 }
 
 tr > :nth-child(5) {
-  width: 13%;
+  width: 10%;
   text-align: center;
 }
 
