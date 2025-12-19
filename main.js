@@ -87,7 +87,7 @@ function updateTable() {
     const labelForDel = document.createElement("label");
 
     deleteRowBtn.type = "checkbox";
-    deleteRowBtn.id = `delete_row${fragment.querySelectorAll("tr").length + 1}`;
+    deleteRowBtn.id = book.id;
     deleteRowBtn.name = `delete_row${
       fragment.querySelectorAll("tr").length + 1
     }`;
