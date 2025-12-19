@@ -42,7 +42,9 @@ const radioBtns = document.querySelectorAll('input[name="read_status"]');
 let radioValue = "";
 radioBtns.forEach((radio) => {
   radio.addEventListener("change", () => {
-    radioValue = document.querySelector('input[name="read_status"]:checked')?.value;
+    radioValue = document.querySelector(
+      'input[name="read_status"]:checked'
+    )?.value;
   });
 });
 
@@ -126,4 +128,10 @@ submitBtn.addEventListener("click", () => {
 const cancleBtn = document.querySelector("#close");
 cancleBtn.addEventListener("click", () => {
   dialogForEntry.close();
+});
+
+const deleteBtn = document.querySelector("#delete-button");
+const dialogForDeletion = document.querySelector("#dialog-for-deletion");
+deleteBtn.addEventListener("click", () => {
+  dialogForDeletion.showModal();
 });
