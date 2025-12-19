@@ -85,6 +85,7 @@ function updateTable() {
     const deleteOptionCell = document.createElement("td");
     const deleteRowBtn = document.createElement("input");
     const labelForDel = document.createElement("label");
+    const statusChangeBtn = document.createElement("button");
 
     deleteRowBtn.type = "checkbox";
     deleteRowBtn.id = book.id;
@@ -97,11 +98,15 @@ function updateTable() {
     labelForDel.appendChild(document.createTextNode("Delete"));
     deleteOptionCell.append(labelForDel, deleteRowBtn);
 
+    statusChangeBtn.classList.add("status-change");
+    statusChangeBtn.textContent = book.status;
+
     snCell.textContent = `${fragment.querySelectorAll("tr").length + 1}.`;
     newTitleCell.textContent = book.title;
     newAuthorCell.textContent = book.author;
     newPageCell.textContent = book.page;
-    statusCell.textContent = book.status;
+
+    statusCell.append(statusChangeBtn);
 
     newRow.append(
       snCell,
