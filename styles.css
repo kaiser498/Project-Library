@@ -197,3 +197,16 @@ tr > :nth-child(6) {
   color: white;
 }
 
+#bookData {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 400px;
+  padding: 0;
+}
+
+#bookData > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
