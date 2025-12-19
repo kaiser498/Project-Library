@@ -15,10 +15,6 @@ let myLibrary = [
   },
 ];
 
-const tbody = document.querySelector("tbody");
-
-updateTable();
-
 function Book(title, author, page, status) {
   this.id = crypto.randomUUID();
   this.title = title;
@@ -26,6 +22,14 @@ function Book(title, author, page, status) {
   this.page = page;
   this.status = status;
 }
+
+Book.prototype.changeStatus = function () {
+  this.status = "Read";
+};
+
+const tbody = document.querySelector("tbody");
+
+updateTable();
 
 const addBtn = document.querySelector("#addBtn");
 const dialogForEntry = document.querySelector("#dialog-for-entry");
@@ -167,10 +171,10 @@ deleteYes.addEventListener("click", () => {
   dialogForDeletion.close();
 });
 
-Book.prototype.changeStatus = function () {
-  if (this.status === "Read") {
-    this.status = "Not Read";
-  } else {
-    this.status = "Read";
-  }
-};
+const statusBtns = document.querySelectorAll(".status-change");
+statusBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const indexInLibrary = myLibrary.findIndex((book) => book.id === btn.id);
+    myLibrary[indexInLibrary].changeStatus();
+  });
+});
