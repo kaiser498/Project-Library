@@ -91,7 +91,7 @@ function updateTable() {
     labelForDel.appendChild(document.createTextNode("Delete"));
     deleteOptionCell.append(labelForDel, deleteRowBtn);
 
-    statusChangeBtn.id = book.id;
+    statusChangeBtn.id = `${book.title}${book.id}`;
     statusChangeBtn.classList.add("status-change");
     statusChangeBtn.textContent = book.status;
 
@@ -165,7 +165,7 @@ const table = document.querySelector("table");
 table.addEventListener("click", (e) => {
   if (e.target.classList.contains("status-change")) {
     const indexInLibrary = myLibrary.findIndex(
-      (book) => book.id == e.target.id
+      (book) => `${book.title}${book.id}` == e.target.id
     );
     myLibrary[indexInLibrary].changeStatus();
     updateTable();
