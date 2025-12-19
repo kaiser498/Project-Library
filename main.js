@@ -93,9 +93,7 @@ function updateTable() {
     }`;
     deleteRowBtn.value = "delete";
 
-    labelForDel.htmlFor = `delete_row${
-      fragment.querySelectorAll("tr").length + 1
-    }`;
+    labelForDel.htmlFor = book.id;
     labelForDel.appendChild(document.createTextNode("Delete"));
     deleteOptionCell.append(labelForDel, deleteRowBtn);
 
