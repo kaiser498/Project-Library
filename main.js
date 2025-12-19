@@ -98,6 +98,7 @@ function updateTable() {
     labelForDel.appendChild(document.createTextNode("Delete"));
     deleteOptionCell.append(labelForDel, deleteRowBtn);
 
+    statusChangeBtn.id = book.id;
     statusChangeBtn.classList.add("status-change");
     statusChangeBtn.textContent = book.status;
 
