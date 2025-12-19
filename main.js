@@ -1,19 +1,4 @@
-let myLibrary = [
-  {
-    id: "55d2235f-2678-462e-8091-10c1af3e80a5",
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    page: "200",
-    status: "Not Read",
-  },
-  {
-    id: "e6e52e5e-30dc-404e-a202-08e3bff08b56",
-    title: "Harry Potter and the Sorcerer's Stone",
-    author: "J. K. Rowling",
-    page: "327",
-    status: "Not Read",
-  },
-];
+let myLibrary = [];
 
 function Book(title, author, page, status) {
   this.id = crypto.randomUUID();
@@ -24,7 +9,11 @@ function Book(title, author, page, status) {
 }
 
 Book.prototype.changeStatus = function () {
-  this.status = "Read";
+  if (this.status === "Read") {
+    this.status = "Not Read";
+  } else {
+    this.status = "Read";
+  }
 };
 
 const tbody = document.querySelector("tbody");
@@ -171,10 +160,30 @@ deleteYes.addEventListener("click", () => {
   dialogForDeletion.close();
 });
 
-const statusBtns = document.querySelectorAll(".status-change");
-statusBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const indexInLibrary = myLibrary.findIndex((book) => book.id === btn.id);
+const table = document.querySelector("table");
+
+table.addEventListener("click", (e) => {
+  if (e.target.classList.contains("status-change")) {
+    const indexInLibrary = myLibrary.findIndex(
+      (book) => book.id == e.target.id
+    );
     myLibrary[indexInLibrary].changeStatus();
-  });
+    updateTable();
+  }
 });
+
+// dummy data start
+bookTitle.value = "The Great Gatsby";
+authorName.value = "F. Scott Fitzgerald";
+pageCount.value = "200";
+radioValue = "Not Read";
+addNewBookToLibrary();
+updateTable();
+
+bookTitle.value = "Harry Potter and the Sorcerer's Stone";
+authorName.value = "J. K. Rowling";
+pageCount.value = "327";
+radioValue = "Not Read";
+addNewBookToLibrary();
+updateTable();
+// dummy data end
