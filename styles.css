@@ -223,3 +223,8 @@ input[type="radio"] {
 button[type="submit"] {
   margin: 1rem 0;
 }
+
+#dialog-for-deletion > div {
+  display: flex;
+  justify-content: space-around;
+}
