@@ -153,3 +153,10 @@ function deleteBookFromLibrary() {
     myLibrary = updateLibrary;
   });
 }
+
+deleteYes.addEventListener("click", () => {
+  deleteBookFromLibrary();
+  addNewBookToLibrary();
+  updateTable();
+  dialogForDeletion.close();
+});
