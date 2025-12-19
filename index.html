@@ -25,24 +25,28 @@
               <input type="text" name="author_name" id="author_name" required />
               <label for="page_count">Page Count</label>
               <input type="number" name="page_count" id="page_count" required />
-              <label for="read">Has read</label>
-              <input
-                type="radio"
-                name="read_status"
-                id="read"
-                value="Read"
-                required
-              />
-              <label for="not_read">Not Read</label>
-              <input
-                type="radio"
-                name="read_status"
-                id="not_read"
-                value="Not Read"
-                required
-              />
-              <button id="close" type="reset">Cancel</button>
+              <div>
+                <label for="read">Has read</label>
+                <input
+                  type="radio"
+                  name="read_status"
+                  id="read"
+                  value="Read"
+                  required
+                />
+              </div>
+              <div>
+                <label for="not_read">Not Read</label>
+                <input
+                  type="radio"
+                  name="read_status"
+                  id="not_read"
+                  value="Not Read"
+                  required
+                />
+              </div>
               <button type="submit" id="submitForAddition">Add Book</button>
+              <button id="close" type="reset">Cancel</button>
             </form>
           </dialog>
         </div>
@@ -67,8 +71,10 @@
         <button type="reset" id="delete-button">Delete</button>
         <dialog id="dialog-for-deletion">
           <h2>Are you sure?</h2>
-          <button id="deletion-yes" type="button">Yes</button>
-          <button id="deletion-no" type="button">No</button>
+          <div>
+            <button id="deletion-yes" type="button">Yes</button>
+            <button id="deletion-no" type="button">No</button>
+          </div>
         </dialog>
       </div>
     </main>
