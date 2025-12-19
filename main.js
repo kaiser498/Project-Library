@@ -166,3 +166,11 @@ deleteYes.addEventListener("click", () => {
   updateTable();
   dialogForDeletion.close();
 });
+
+Book.prototype.changeStatus = function () {
+  if (this.status === "Read") {
+    this.status = "Not Read";
+  } else {
+    this.status = "Read";
+  }
+};
