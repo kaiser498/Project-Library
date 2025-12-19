@@ -140,3 +140,16 @@ const deleteNo = document.querySelector("#deletion-no");
 deleteNo.addEventListener("click", () => {
   dialogForDeletion.close();
 });
+
+function deleteBookFromLibrary() {
+  const deleteRowCheckbox = document.querySelectorAll(
+    "input[type='checkbox']:checked"
+  );
+  deleteRowCheckbox.forEach((checkbox) => {
+    const indexInLibrary = myLibrary.findIndex(
+      (book) => book.id === checkbox.id
+    );
+    let updateLibrary = myLibrary.filter((book, id) => id !== indexInLibrary);
+    myLibrary = updateLibrary;
+  });
+}
