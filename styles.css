@@ -210,3 +210,16 @@ tr > :nth-child(6) {
   justify-content: center;
   align-items: center;
 }
+
+#bookData > div > label {
+  margin-right: 1rem;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  vertical-align: middle;
+}
+
+button[type="submit"] {
+  margin: 1rem 0;
+}
